@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: beige;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.grid-wrapper{
+  margin: 0 auto;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+.cell{
+  width: 25px;
+  height: 25px;
+  line-height: 25px;  
+  text-align: center;   
+  background-color: rgba(0, 0, 255, 0.404);
+  border: 1px solid #fefefe;
+  box-sizing: border-box;
+
+}
+.cell.hit{
+  background-color: yellow;
+
+}
+.cell.ship{
+  background-color: brown;
+
+}
+.controls{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.controls > button {
+  margin-bottom: 2rem;
+}
+button:nth-child(2){
+  height: 50px;
+}
+
+@media screen and (max-width: 450px){
+  .container{
+    flex-direction: column;
+  }
+  .grid-wrapper{
+    margin-bottom: 2rem;
+  }
+}
