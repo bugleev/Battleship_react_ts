@@ -1,5 +1,5 @@
 import * as React from "react";
-import placeShip from "./helpers";
+import { placeLship, placeShip } from "./helpers";
 
 const grid: number[] = [];
 for (let i = 1; i <= 100; i++) {
@@ -34,14 +34,15 @@ class App extends React.Component<{}, IAppState> {
   public state = {
     firedCells: [],
     hitCount: 0,
-    ships: [1]
+    ships: []
   };
 
   public componentDidMount() {
-    const [ship1, data] = placeShip(2);
-    const [ship2] = placeShip(4, data);
-    console.log(ship1, ship2);
-    const ships = ship1.concat(ship2);
+    const [ship1, cells] = placeLship();
+    const [ship2, data] = placeShip(2, cells);
+    const [ship3] = placeShip(4, data);
+    console.log(ship1, ship2, ship3);
+    const ships: any[] = ship1.concat(ship2, ship3);
     console.log(ships);
     this.setState({
       ships
@@ -67,10 +68,10 @@ class App extends React.Component<{}, IAppState> {
     });
   };
   public reset = () => {
-    const [ship1, data] = placeShip(2);
-    const [ship2] = placeShip(4, data);
-    const ships = ship1.concat(ship2);
-
+    const [ship1, cells] = placeLship();
+    const [ship2, data] = placeShip(2, cells);
+    const [ship3] = placeShip(4, data);
+    const ships: any[] = ship1.concat(ship2, ship3);
     this.setState({
       firedCells: [],
       hitCount: 0,
@@ -85,11 +86,12 @@ class App extends React.Component<{}, IAppState> {
   public getOverallShips = () => {
     console.log(this.state.ships);
 
-    const ships = [...this.state.ships];
+    const ships: number[] = [...this.state.ships];
     return ships;
   };
   public render() {
-    const { firedCells, ships } = this.state;
+    const { firedCells } = this.state;
+    const ships: number[] = [...this.state.ships];
 
     return (
       <div className="container">
