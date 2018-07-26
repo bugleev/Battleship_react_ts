@@ -1,4 +1,3 @@
-// tslint:disable:no-console
 function getOrientation() {
   return Math.random() > 0.5 ? "horizontal" : "vertical";
 }
