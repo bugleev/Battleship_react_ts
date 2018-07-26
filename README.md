@@ -7,22 +7,22 @@
   <br>
   
 </div>
-<h3 align="center">Описание</h3>
+<h3 align="center">Description</h3>
 
-Выполнено на стеке React, Typescript. Бойлерплейт - [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript). 
+Made with React, Typescript. Boilerplate - [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript). 
 
-<h3 align="center">Как запустить</h3>
+<h3 align="center">Setup</h3>
 
-* Клонировать репозиторий
+* Clone repo
 
-* Перейти в консоли в папку с проектом
+* Go to the project folder via terminal
 
-* Установить зависимости:
+* Install dependencies:
 
 ```bash
 npm i
 ```
-* Запустить:
+* Run project in dev mode:
 
 ```bash
 npm start
