@@ -1,7 +1,3 @@
-function getOrientation() {
-  return Math.random() > 0.5 ? "horizontal" : "vertical";
-}
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -14,4 +10,4 @@ function grid() {
   return arr;
 }
 
-export { getOrientation, getRandomInt, grid };
+export { getRandomInt, grid };

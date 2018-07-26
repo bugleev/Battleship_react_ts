@@ -1,5 +1,8 @@
 import { getRandomInt } from "../helpers";
 
+function getOrientation() {
+  return Math.random() > 0.5 ? "horizontal" : "vertical";
+}
 function getCellNeighbours(cell) {
   return [
     cell,
@@ -81,4 +84,4 @@ function getAdditionalCell(ship, orientation) {
   return newCell;
 }
 
-export { getAdditionalCell, getRestrictedCells };
+export { getAdditionalCell, getOrientation, getRestrictedCells };

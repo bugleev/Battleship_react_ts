@@ -1,7 +1,11 @@
-import { getOrientation, getRandomInt } from "../helpers";
-import { getAdditionalCell, getRestrictedCells } from "./utilities";
+import { getRandomInt } from "../helpers";
+import {
+  getAdditionalCell,
+  getOrientation,
+  getRestrictedCells
+} from "./utilities";
 
-function LShip() {
+function LShip(restrictedCells) {
   const newShip: number[] = [];
   const orientation = getOrientation();
   let x;
@@ -21,12 +25,11 @@ function LShip() {
     newShip.push(next);
   }
   newShip.push(getAdditionalCell(newShip, orientation));
-  const restrictedCells = getRestrictedCells(newShip);
-  return { newShip, restrictedCells };
+  restrictedCells.push(...getRestrictedCells(newShip));
+  return newShip;
 }
 
-function IShip(shipSize, unavailableCells?) {
-  const cells = [...unavailableCells] || [];
+function IShip(shipSize, restrictedCells) {
   const orientation = getOrientation();
   let newShip: number[] = [];
   let validShip = false;
@@ -42,12 +45,12 @@ function IShip(shipSize, unavailableCells?) {
       y = getRandomInt(0, 9);
     }
     const start = parseInt(x.toString().concat(y.toString()), 10);
-    if (cells.indexOf(start) === -1) {
+    if (restrictedCells.indexOf(start) === -1) {
       validShip = true;
       newShip.push(start);
       for (let i = 0; i < shipSize - 1; i++) {
         const next = newShip[i] + add;
-        if (cells.indexOf(next) !== -1) {
+        if (restrictedCells.indexOf(next) !== -1) {
           validShip = false;
           newShip = [];
         }
@@ -55,8 +58,8 @@ function IShip(shipSize, unavailableCells?) {
       }
     }
   }
-  const restrictedCells = cells.concat(getRestrictedCells(newShip));
-  return { newShip, restrictedCells };
+  restrictedCells.push(...getRestrictedCells(newShip));
+  return newShip;
 }
 
 export { LShip, IShip };
