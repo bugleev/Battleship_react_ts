@@ -30,7 +30,7 @@ function IShip(shipSize, unavailableCells?) {
   const orientation = getOrientation();
   let newShip: number[] = [];
   let validShip = false;
-  const size = orientation === "horizontal" ? 12 : 11;
+  const size = shipSize === 1 ? 11 : orientation === "horizontal" ? 12 : 11;
   const add = orientation === "horizontal" ? 1 : 10;
   while (!validShip) {
     newShip = [];

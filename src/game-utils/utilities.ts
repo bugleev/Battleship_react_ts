@@ -2,6 +2,7 @@ import { getRandomInt } from "../helpers";
 
 function getCellNeighbours(cell) {
   return [
+    cell,
     cell + 9,
     cell + 10,
     cell + 11,

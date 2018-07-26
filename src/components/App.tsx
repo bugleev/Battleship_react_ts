@@ -23,9 +23,13 @@ class App extends React.Component<{}, IAppState> {
   }
   public placeShips = () => {
     const { newShip: Lship, restrictedCells: cells } = LShip();
-    const { newShip: Iship2, restrictedCells: newCells } = IShip(2, cells);
-    const { newShip: Iship4 } = IShip(4, newCells);
-    return Lship.concat(Iship2, Iship4);
+    const { newShip: Iship1, restrictedCells: nextCells } = IShip(4, cells);
+    const { newShip: Iship2, restrictedCells: finalCells } = IShip(
+      1,
+      nextCells
+    );
+    const { newShip: Iship3 } = IShip(1, finalCells);
+    return Lship.concat(Iship1, Iship2, Iship3);
   };
   public handleClick = () => {
     const { firedCells, ships } = this.state;
