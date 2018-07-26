@@ -22,6 +22,7 @@ class App extends React.Component<{}, IAppState> {
     });
   }
   public placeShips = () => {
+    // this looks ugly but couldn't come up with anything nicer in short time :\
     const { newShip: Lship, restrictedCells: cells } = LShip();
     const { newShip: Iship1, restrictedCells: nextCells } = IShip(4, cells);
     const { newShip: Iship2, restrictedCells: finalCells } = IShip(
