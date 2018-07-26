@@ -1,6 +1,6 @@
 <div align="center">
   
-[![Edit battleship](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/llml8rxwwz)
+[![Edit battleship](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/95zqp1rj4)
   
 <h2>Battleship Variation</h2>
   <a href="https://reactjs.org/">
