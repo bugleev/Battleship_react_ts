@@ -1,4 +1,7 @@
 <div align="center">
+  
+[![Edit battleship](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/xzozvk31vw)
+  
 <h2>Battleship Variation</h2>
   <a href="https://reactjs.org/">
     <img width="100" heigth="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png">
